@@ -11,6 +11,17 @@
     display: inline-block;
   }
   body { top: 0px !important; }
+  .fade-in {
+    opacity: 0;
+    transform: translateY(30px);
+    animation: fadeInUp 1s ease forwards;
+  }
+  @keyframes fadeInUp {
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
 </style>
 <script type="text/javascript">
   function googleTranslateElementInit() {
@@ -23,12 +34,12 @@
 </script>
 <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 
-<section style="padding: 4rem 2rem; font-family: system-ui, sans-serif; background: #121212; color: #eee;">
-  <div style="max-width: 960px; margin: 0 auto;">
-    <h1 style="font-size: 2.2rem; margin-bottom: 0.5rem; color: #1a73e8;">CareBridge</h1>
-    <p style="font-size: 1.2rem; color: #ddd; margin-bottom: 2rem;">A self-contained, school-ready mental health support solution — featuring real-time chat, AI-assisted planning, and secure offline operation.</p>
+<section style="font-family: 'Segoe UI', system-ui, sans-serif; background: #121212; color: #eee; padding: 0; margin: 0;">
+  <div style="max-width: 960px; margin: 0 auto; padding: 4rem 2rem;">
+    <h1 style="font-size: 3rem; margin-bottom: 1rem; color: #64b5f6;">CareBridge</h1>
+    <p style="font-size: 1.25rem; color: #ccc; max-width: 720px; margin-bottom: 2rem; line-height: 1.6;">A local-first solution empowering schools with secure, AI-assisted mental health support — cutting paperwork and enhancing care delivery with zero dependency on the cloud.</p>
 
-    <div style="margin-bottom: 2rem;">
+    <div class="fade-in" style="margin-bottom: 2rem;">
   <h3 style="margin-bottom: 0.5rem; color: #1a73e8;">🎬 CareBridge Overview</h3>
   <video controls style="width: 100%; max-height: 480px; border: 2px solid #444; border-radius: 10px; box-shadow: 0 2px 12px rgba(0,0,0,0.4);">
     <source src="walkthrough.mp4" type="video/mp4">
@@ -37,32 +48,50 @@
 </div>
 
 <div style="margin-bottom: 2rem;">
-  <h3 style="margin-bottom: 0.5rem; color: #1a73e8;">🛡️ AI Guardian in Action</h3>
-  <video controls style="width: 100%; max-height: 480px; border: 2px solid #e0e0e0; border-radius: 10px; box-shadow: 0 2px 8px rgba(0,0,0,0.05);">
-    <source src="guardian_demo.mp4" type="video/mp4">
-    Your browser does not support the video tag.
-  </video>
+    <h3 style="margin-bottom: 0.5rem; color: #1a73e8;">🛡️ AI Guardian in Action</h3>
+    <video controls style="width: 100%; max-height: 480px; border: 2px solid #e0e0e0; border-radius: 10px; box-shadow: 0 2px 8px rgba(0,0,0,0.05);">
+      <source src="guardian_demo.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+  </div>
+
+<div style="margin-bottom: 2rem;">
+<h3 style="margin-bottom: 0.5rem; color: #1a73e8;">🧭 CareBridge System Diagram</h3>
+  <img src="arch.png" alt="CareBridge System Diagram" style="width: 100%; border-radius: 8px; margin-bottom: 2rem;" />  
 </div>
 
-    <img src="arch.png" alt="CareBridge System Diagram" style="width: 100%; border-radius: 8px; margin-bottom: 2rem;" />
+<div class="fade-in" style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 1.5rem; margin: 3rem 0;">
+  <div style="flex: 1 1 300px; text-align: center; display: flex; flex-direction: column; justify-content: center;">
+    <img src="student_phone_ui.png" alt="Student Phone UI" style="width: 100%; max-width: 300px; border-radius: 10px; box-shadow: 0 0 10px rgba(0,0,0,0.4);">
+    <p style="margin-top: 0.5rem; color: #aaa; font-size: 0.95rem;">Student Mobile Experience</p>
+  </div>
+  <div style="flex: 1 1 300px; text-align: center; display: flex; flex-direction: column; justify-content: center;">
+    <img src="carebridge_mini_pc.png" alt="Mini PC" style="width: 100%; max-width: 300px; border-radius: 10px; box-shadow: 0 0 10px rgba(0,0,0,0.4);">
+    <p style="margin-top: 0.5rem; color: #aaa; font-size: 0.95rem;">Local CareBridge Box</p>
+  </div>
+  <div style="flex: 1 1 300px; text-align: center; display: flex; flex-direction: column; justify-content: center;">
+    <img src="ai_form.gif" alt="Dashboard UI" style="width: 100%; max-width: 300px; border-radius: 10px; box-shadow: 0 0 10px rgba(0,0,0,0.4);">
+    <p style="margin-top: 0.5rem; color: #aaa; font-size: 0.95rem;">Auto-Populated Case Form</p>
+  </div>
+</div>
 
-    <ul style="font-size: 1.05rem; line-height: 1.6; padding-left: 1rem; color: #ccc;">
-      <li><strong>Student Chat UI:</strong> Real-time CBT support via secure WebSocket</li>
-      <li><strong>Counselor Dashboard:</strong> Review transcripts, generate treatment plans with AI</li>
-      <li><strong>CareBridge Local LLM:</strong> On-device private language model for summaries and forms</li>
-      <li><strong>Study Pal:</strong> Between-session support tool for students to review plans</li>
-      <li><strong>AI Guardian:</strong> Monitors network activity and LLM box integrity</li>
-      <li><strong>Built-in VPN:</strong> WireGuard-powered remote connection support</li>
+    <ul class="fade-in" style="font-size: 1.05rem; line-height: 1.6; padding-left: 1rem; color: #ccc;">
+      <li>🧑‍🎓 <strong>Student Chat UI:</strong> Real-time CBT-style conversations via secure WebSocket, with automatic session logging — no note-taking required.</li>
+      <li>🧑‍⚕️ <strong>Counselor Dashboard:</strong> Instantly review AI-organized transcripts and auto-generated case summaries and treatment plans — drastically reducing paperwork.</li>
+      <li>🧠 <strong>CareBridge Local LLM:</strong> On-device AI that drafts progress notes, identifies patterns, and fills out forms — without compromising privacy or requiring manual input.</li>
+      <li>📘 <strong>Study Pal:</strong> Student-facing self-help companion that reinforces coping strategies and homework — guided by the counselor's plan with no extra admin overhead.</li>
+      <li>🛡️ <strong>AI Guardian:</strong> Monitors for rogue AI behavior and data leakage — no IT setup required, so your team stays focused on care, not compliance.</li>
+      <li>🔐 <strong>Built-in VPN:</strong> Seamless, secure connections for remote counseling sessions — no IT tickets or external hosting needed.</li>
     </ul>
-
-    <div style="margin-top: 2rem;">
+  
+    <div class="fade-in" style="margin-top: 2rem;">
       <a href="#" style="background: #2196f3; color: #fff; padding: 12px 24px; border-radius: 6px; text-decoration: none; font-weight: bold; font-size: 1rem;">🚀 Schedule a Demo</a>
     </div>
 
-    <div style="margin-top: 3rem; padding-top: 2rem; border-top: 1px solid #444;">
+    <div class="fade-in" style="margin-top: 3rem; padding-top: 2rem; border-top: 1px solid #444;">
       <h3 style="color: #1a73e8;">What Schools Are Saying</h3>
       <blockquote style="font-style: italic; color: #bbb; margin-top: 1rem;">“CareBridge helped us streamline our counseling sessions and improve student outcomes — all without sending any data to the cloud.” <br><span style="font-weight: bold;">— High School Administrator</span></blockquote>
-      <blockquote style="font-style: italic; color: #555; margin-top: 1.5rem;">“The AI summaries are surprisingly good — it gives me more time to focus on student care.” <br><span style="font-weight: bold;">— School Counselor</span></blockquote>
+      <blockquote style="font-style: italic; color: #bbb; margin-top: 1.5rem;">“The AI summaries are surprisingly good — it gives me more time to focus on student care.” <br><span style="font-weight: bold;">— School Counselor</span></blockquote>
     </div>
 
     <div style="margin-top: 3rem; padding-top: 2rem; border-top: 1px solid #444;">
@@ -74,7 +103,7 @@
         <button type="submit" style="background: #1a73e8; color: white; padding: 10px 20px; border: none; border-radius: 4px; font-size: 1rem; cursor: pointer;">Send Message</button>
       </form>
     </div>
-      <div style="margin-top: 3rem; padding-top: 2rem; border-top: 1px solid #ccc;">
+      <div class="fade-in" style="margin-top: 3rem; padding-top: 2rem; border-top: 1px solid #ccc;">
       <h3 style="color: #1a73e8;">📄 Download the Full Architecture</h3>
       <p style="margin-bottom: 1rem;">View a detailed PDF overview of how CareBridge works from chat UI to VPN protection.</p>
       <a href="carebridge_architecture_overview.pdf" download style="display: inline-block; background: #1a73e8; color: white; padding: 10px 20px; border-radius: 5px; font-weight: bold; text-decoration: none;">📥 Download PDF</a>
